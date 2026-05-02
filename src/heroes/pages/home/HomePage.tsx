@@ -1,16 +1,11 @@
-import {
-  Heart,
-  ChevronLeft,
-  ChevronRight,
-  MoreHorizontal,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CustomJumbotron } from "@/components/custom/CustomJumbotron"
 import { HeroStats } from "@/heroes/components/HeroStats"
 import { HeroGrid } from "@/heroes/components/HeroGrid"
 import { useState } from "react"
 import { CustomPagination } from "@/components/custom/CustomPagination"
+import { CustomBreadcrumb } from "@/components/custom/CustomBreadcrumb"
 
 export const HomePage = () => {
 
@@ -20,12 +15,11 @@ export const HomePage = () => {
  
   return (
       <>
-      <>
         <CustomJumbotron 
           title="Universo de Superheroes"
           description="Descubre, explora y administra super héroes y villanos"/>
 
-
+        <CustomBreadcrumb currentPage="Super heroes"/>
         {/* Stats Dashboard */}
         <HeroStats />
         {/* Controls */}
@@ -66,6 +60,5 @@ export const HomePage = () => {
         {/* Pagination */}
         <CustomPagination totalPages={ 8 }/>
       </>
-    </>
   )
 }
